@@ -11,6 +11,11 @@
       <span th:text="${user.firstName}"></span>
       <span th:text="${user.lastName}"></span>
     </p>
+    <p th:if="${user.email}">
+      Account:
+      <span th:text="${user.email}"></span>
+      (<span th:text="${user.password}"></span>)
+    </p>
   </body>
 </html>
 
