@@ -2,8 +2,8 @@ package com.riuaux.spring.learning.webapp.springboot_web.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.riuaux.spring.learning.webapp.springboot_web.models.UserDTO;
 import com.riuaux.spring.learning.webapp.springboot_web.models.UserModel;
+import com.riuaux.spring.learning.webapp.springboot_web.models.dtos.UserDto;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -39,11 +39,11 @@ public class UserRestController {
   }
 
   @GetMapping("/details-dto")
-  public UserDTO userDetailsDTO() {
+  public UserDto userDetailsDto() {
     UserModel user = new UserModel("Agustin", "Camarena");
-    UserDTO userDTO = new UserDTO("User via DTO", user);
+    UserDto userDto = new UserDto("User via Dto", user);
 
-    return userDTO;
+    return userDto;
   }
 
 }

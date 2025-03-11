@@ -1,11 +1,13 @@
-package com.riuaux.spring.learning.webapp.springboot_web.models;
+package com.riuaux.spring.learning.webapp.springboot_web.models.dtos;
 
-public class UserDTO {
+import com.riuaux.spring.learning.webapp.springboot_web.models.UserModel;
+
+public class UserDto {
 
   private String title;
   private UserModel user;
 
-  public UserDTO(String title, UserModel user) {
+  public UserDto(String title, UserModel user) {
     this.title = title;
     this.user = user;
   }
