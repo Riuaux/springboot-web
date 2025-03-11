@@ -3,6 +3,7 @@ package com.riuaux.spring.learning.webapp.springboot_web.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.riuaux.spring.learning.webapp.springboot_web.models.UserModel;
 import com.riuaux.spring.learning.webapp.springboot_web.models.dtos.ParamDto;
 
 import java.util.HashMap;
@@ -10,6 +11,8 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api")
@@ -38,6 +41,17 @@ public class PathVariableController {
     jsonData.put("id", id);
 
     return jsonData;
+  }
+
+  // ^ Post
+
+  @PostMapping("/user/create")
+  public UserModel creatUserModel(@RequestBody UserModel user) {
+
+    // ? Tinker with the data...
+    user.setPassword(user.getPassword().toUpperCase());
+
+    return user;
   }
 
 }
